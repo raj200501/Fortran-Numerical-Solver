@@ -1,5 +1,5 @@
 FC = gfortran
-FFLAGS = -O2 -Wall -Wextra -std=f2008 -fcheck=all -J$(OBJ_DIR) -I$(OBJ_DIR)
+FFLAGS = -O2 -Wall -Wextra -fcheck=all -J$(OBJ_DIR) -I$(OBJ_DIR)
 SRC_DIR = src
 BUILD_DIR = build
 OBJ_DIR = $(BUILD_DIR)/obj

@@ -10,7 +10,7 @@ LFORTRAN_TARBALL="${TOOL_DIR}/lfortran-${LFORTRAN_VERSION}.tar.gz"
 if command -v gfortran >/dev/null 2>&1; then
   echo "gfortran found: $(command -v gfortran)"
   echo "FC=gfortran"
-  echo "FFLAGS=-O2 -Wall -Wextra -std=f2008 -fcheck=all -Jbuild/obj -Ibuild/obj"
+  echo "FFLAGS=-O2 -Wall -Wextra -fcheck=all -Jbuild/obj -Ibuild/obj"
   exit 0
 fi
 
@@ -38,4 +38,4 @@ echo "Using LFortran: ${LFORTRAN_DIR}/bin/lfortran"
 # LFortran does not support -fcheck=all, so use compatible flags.
 echo "FC=${LFORTRAN_DIR}/bin/lfortran"
 # Use -std=f2008 for compatibility if supported; ignore if not.
-echo "FFLAGS=-O2 -Wall -Wextra -std=f2008 -Jbuild/obj -Ibuild/obj"
+echo "FFLAGS=-O2 -Wall -Wextra -Jbuild/obj -Ibuild/obj"
