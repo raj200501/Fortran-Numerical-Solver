@@ -7,6 +7,10 @@ BOOTSTRAP_OUTPUT=$("${ROOT_DIR}/scripts/bootstrap_fortran.sh")
 FC=$(echo "${BOOTSTRAP_OUTPUT}" | awk -F= '/^FC=/{print $2}')
 FFLAGS=$(echo "${BOOTSTRAP_OUTPUT}" | sed -n 's/^FFLAGS=//p')
 
+if [[ "${FORCE_PYTHON:-}" == "1" ]]; then
+  FC=""
+fi
+
 if [[ -n "${FC}" ]]; then
   make -C "${ROOT_DIR}" clean
   make -C "${ROOT_DIR}" FC="${FC}" FFLAGS="${FFLAGS}"
