@@ -1,3 +1,7 @@
 *.o
 *.mod
 solver
+build/
+__pycache__/
+.python-version
+.tooling/
