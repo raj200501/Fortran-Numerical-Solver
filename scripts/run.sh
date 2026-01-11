@@ -5,7 +5,7 @@ ROOT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 
 BOOTSTRAP_OUTPUT=$("${ROOT_DIR}/scripts/bootstrap_fortran.sh")
 FC=$(echo "${BOOTSTRAP_OUTPUT}" | awk -F= '/^FC=/{print $2}')
-FFLAGS=$(echo "${BOOTSTRAP_OUTPUT}" | awk -F= '/^FFLAGS=/{print $2}')
+FFLAGS=$(echo "${BOOTSTRAP_OUTPUT}" | sed -n 's/^FFLAGS=//p')
 
 CONFIG_FILE=${1:-}
 
